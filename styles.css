@@ -289,7 +289,9 @@ section {
 .timeline article,
 .proof-grid div,
 .fit-section article,
-.price-box,
+.trial-card,
+.price-card,
+.premium-grid article,
 .contact-card,
 .faq-list details {
   border: 1px solid var(--line);
@@ -310,6 +312,7 @@ section {
 .proof-grid p,
 .fit-section li,
 .price-section p,
+.trial-card li,
 .faq-list p,
 .contact-section p,
 .contrast-copy p,
@@ -522,21 +525,21 @@ section {
 }
 
 .fit-section ul,
-.price-box ul {
+.trial-card ul {
   margin: 28px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .fit-section li,
-.price-box li {
+.trial-card li {
   position: relative;
   padding-left: 24px;
   margin-bottom: 14px;
 }
 
 .fit-section li::before,
-.price-box li::before {
+.trial-card li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -560,13 +563,6 @@ section {
   color: var(--paper);
 }
 
-.price-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.7fr);
-  gap: 70px;
-  align-items: center;
-}
-
 .price-section h2,
 .price-section .section-kicker {
   color: var(--paper);
@@ -577,23 +573,99 @@ section {
   font-size: 18px;
 }
 
-.price-box {
-  padding: 36px;
-  background: var(--paper);
+.price-intro {
+  max-width: 900px;
+  margin-bottom: 34px;
+}
+
+.trial-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+  gap: 32px;
+  padding: 32px;
+  background: #fbf1d6;
   color: var(--rock);
 }
 
-.price-box span {
+.trial-card span,
+.price-card span,
+.premium-grid span {
   color: var(--earth-brown);
   font-weight: 900;
 }
 
-.price-box strong {
-  display: block;
-  margin: 10px 0 28px;
+.trial-card h3 {
+  margin: 8px 0 10px;
   color: var(--green-deep);
-  font-size: 38px;
+  font-size: 30px;
+}
+
+.trial-card p,
+.trial-card li,
+.price-card p,
+.premium-grid p {
+  color: var(--secondary);
+}
+
+.price-cards,
+.premium-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.price-cards {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 18px;
+}
+
+.price-card,
+.premium-grid article {
+  padding: 28px;
+  background: var(--paper);
+  color: var(--rock);
+}
+
+.price-card.featured {
+  border-color: rgba(244, 196, 95, 0.9);
+  box-shadow: 0 20px 60px rgba(244, 196, 95, 0.2);
+}
+
+.price-meta {
+  margin-top: 12px;
+  color: rgba(105, 113, 106, 0.82);
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.price-card strong,
+.premium-grid strong {
+  display: block;
+  margin: 6px 0 6px;
+  color: var(--green-deep);
+  font-size: 34px;
   line-height: 1;
+}
+
+.price-card em {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 3px 9px;
+  background: rgba(244, 196, 95, 0.24);
+  color: #8c6d25;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.price-card p,
+.premium-grid p {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.premium-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 16px;
 }
 
 .faq-section {
@@ -712,9 +784,14 @@ section {
   .split,
   .video-layout,
   .proof-layout,
-  .price-layout,
+  .trial-card,
+  .premium-grid,
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .price-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .timeline {
@@ -731,7 +808,8 @@ section {
     border-bottom: 0;
   }
 
-  .price-layout,
+  .trial-card,
+  .premium-grid,
   .contact-layout,
   .proof-layout,
   .video-layout,
@@ -800,13 +878,24 @@ section {
   .timeline article,
   .proof-grid div,
   .fit-section article,
-  .price-box,
+  .trial-card,
+  .price-card,
+  .premium-grid article,
   .contact-card,
   .faq-list details {
     padding: 24px;
   }
 
-  .price-box strong {
+  .price-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .trial-card h3 {
+    font-size: 26px;
+  }
+
+  .price-card strong,
+  .premium-grid strong {
     font-size: 32px;
   }
 
