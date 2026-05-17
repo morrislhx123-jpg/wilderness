@@ -382,6 +382,10 @@ section {
   background: #f7f3eb;
 }
 
+.early-video .section-inner {
+  padding: 76px 0 88px;
+}
+
 .video-layout {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -607,6 +611,56 @@ section {
   color: var(--secondary);
 }
 
+.service-tabs {
+  margin-top: 22px;
+}
+
+.service-tabs > input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tab-menu {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin: 24px 0 18px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-menu label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 148px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#tab-subscription:checked ~ .tab-menu label[for="tab-subscription"],
+#tab-custom:checked ~ .tab-menu label[for="tab-custom"] {
+  background: var(--paper);
+  color: var(--green-deep);
+}
+
+.tab-panel {
+  display: none;
+}
+
+#tab-subscription:checked ~ .subscription-panel,
+#tab-custom:checked ~ .custom-panel {
+  display: block;
+}
+
 .price-cards,
 .premium-grid {
   display: grid;
@@ -626,8 +680,31 @@ section {
 }
 
 .price-card.featured {
-  border-color: rgba(244, 196, 95, 0.9);
-  box-shadow: 0 20px 60px rgba(244, 196, 95, 0.2);
+  position: relative;
+  border-color: rgba(244, 196, 95, 0.95);
+  box-shadow: 0 24px 70px rgba(244, 196, 95, 0.22);
+}
+
+.price-card.hero-plan {
+  background:
+    linear-gradient(135deg, rgba(244, 196, 95, 0.38), rgba(255, 255, 255, 0.96) 46%),
+    var(--paper);
+}
+
+.recommend-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--sunrise);
+  color: #6f5116;
+  font-size: 13px;
+  line-height: 1;
 }
 
 .price-meta {
@@ -691,6 +768,12 @@ section {
 
 .faq-list p {
   margin: 16px 0 0;
+}
+
+.service-note {
+  margin: 22px 0 0;
+  color: var(--secondary);
+  font-size: 14px;
 }
 
 .contact-section {
@@ -815,6 +898,14 @@ section {
   .video-layout,
   .split {
     gap: 32px;
+  }
+
+  .tab-menu {
+    width: 100%;
+  }
+
+  .tab-menu label {
+    min-width: 0;
   }
 }
 
