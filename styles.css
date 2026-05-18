@@ -267,7 +267,7 @@ section {
 
 .offer-intro {
   max-width: 900px;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .offer-intro p {
@@ -285,16 +285,43 @@ section {
 
 .offer-table {
   width: 100%;
-  min-width: 920px;
+  min-width: 1040px;
   border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.offer-col-service {
+  width: 18%;
+}
+
+.offer-col-price {
+  width: 15%;
+}
+
+.offer-col-count {
+  width: 15%;
+}
+
+.offer-col-delivery {
+  width: 30%;
+}
+
+.offer-col-fit {
+  width: 22%;
 }
 
 .offer-table th,
 .offer-table td {
-  padding: 22px 20px;
+  padding: 22px 24px;
   border-bottom: 1px solid var(--line);
+  border-right: 1px solid rgba(60, 59, 55, 0.08);
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
+}
+
+.offer-table th:last-child,
+.offer-table td:last-child {
+  border-right: 0;
 }
 
 .offer-table th {
@@ -306,20 +333,61 @@ section {
 
 .offer-table td {
   color: var(--secondary);
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
-.offer-table td:nth-child(2),
-.offer-table td:nth-child(3) {
+.offer-table td:nth-child(2) {
   color: var(--green-deep);
-  font-weight: 900;
   white-space: nowrap;
 }
 
 .offer-table strong {
   display: block;
   color: var(--rock);
-  font-size: 17px;
+  font-size: 19px;
+}
+
+.offer-table b {
+  display: block;
+  color: var(--green-deep);
+  font-size: 18px;
+}
+
+.offer-table small {
+  display: block;
+  margin-top: 4px;
+  color: var(--earth-brown);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.offer-price {
+  color: var(--green-deep) !important;
+  font-size: 20px !important;
+}
+
+.offer-table ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer-table li {
+  position: relative;
+  padding-left: 16px;
+  margin: 3px 0;
+}
+
+.offer-table li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--wilderness-green);
 }
 
 .offer-table span {
