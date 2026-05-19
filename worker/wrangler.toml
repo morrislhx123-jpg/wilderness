@@ -1,0 +1,27 @@
+name = "wilderness-ai-consultant"
+main = "src/index.js"
+compatibility_date = "2025-12-01"
+
+[vars]
+DEEPSEEK_MODEL = "deepseek-v4-flash"
+DEEPSEEK_TEMPERATURE = "0.45"
+DEEPSEEK_MAX_TOKENS = "900"
+DAILY_IP_LIMIT = "80"
+LOG_TTL_SECONDS = "7776000"
+# 部署后建议改成你的 GitHub Pages 地址，例如：
+# ALLOWED_ORIGIN = "https://morrislhx123-jpg.github.io"
+ALLOWED_ORIGIN = "*"
+
+# 可选：如果要启用 IP 每日限额，先在 Cloudflare 创建 KV，再取消下面注释并填入 id。
+# [[kv_namespaces]]
+# binding = "USAGE_KV"
+# id = "你的KV命名空间ID"
+
+[[kv_namespaces]]
+binding = "LOGS_KV"
+id = "81950f4a496145bdb14a57b99847037d"
+
+[[rules]]
+type = "Text"
+globs = ["**/*.md"]
+fallthrough = true
