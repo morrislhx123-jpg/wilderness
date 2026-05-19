@@ -2,7 +2,7 @@ const CONSULT_CONFIG = {
   // 部署 Cloudflare Worker 后，把这里改成 Worker 地址。
   // 例如：https://ai-consultant.your-name.workers.dev/chat
   endpoint: "https://wilderness-ai-consultant.wilderness-ai.workers.dev/chat",
-  freePoints: 20,
+  freePoints: 30,
   chatCost: 1,
   maxMessages: 16,
 };
@@ -14,7 +14,6 @@ const pointsText = document.querySelector("#pointsText");
 const form = document.querySelector("#chatForm");
 const input = document.querySelector("#messageInput");
 const sendButton = document.querySelector("#sendButton");
-const resetButton = document.querySelector("#resetButton");
 const quickButtons = document.querySelectorAll(".quick-prompts button");
 
 const welcomeMessage =
@@ -26,7 +25,11 @@ function loadState() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (saved && Array.isArray(saved.messages) && Number.isFinite(saved.points)) {
-      return saved;
+      return {
+        ...saved,
+        points: Math.min(saved.points, CONSULT_CONFIG.freePoints),
+        deviceId: saved.deviceId || (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`),
+      };
     }
   } catch (error) {
     console.warn("Failed to load consult state", error);
@@ -165,16 +168,6 @@ quickButtons.forEach((button) => {
     trackEvent("quick_prompt_click", { text: button.textContent });
     input.focus();
   });
-});
-
-resetButton.addEventListener("click", () => {
-  state = {
-    points: CONSULT_CONFIG.freePoints,
-    messages: [{ role: "assistant", content: welcomeMessage }],
-    deviceId: state.deviceId,
-  };
-  saveState();
-  renderMessages();
 });
 
 renderMessages();
