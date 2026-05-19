@@ -1,0 +1,242 @@
+.consult-body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 86% 10%, rgba(244, 196, 95, 0.18), transparent 28%),
+    radial-gradient(circle at 12% 76%, rgba(95, 147, 99, 0.16), transparent 30%),
+    var(--mist);
+}
+
+.consult-header {
+  position: relative;
+}
+
+.consult-shell {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 52px 0 64px;
+}
+
+.consult-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: 36px;
+  align-items: stretch;
+}
+
+.consult-intro {
+  padding: 44px 0;
+}
+
+.consult-intro h1 {
+  max-width: 620px;
+  font-size: clamp(42px, 6vw, 76px);
+}
+
+.consult-intro p {
+  max-width: 560px;
+  color: var(--secondary);
+  font-size: 18px;
+}
+
+.consult-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 34px 0;
+}
+
+.consult-points span {
+  padding: 8px 14px;
+  border: 1px solid rgba(49, 95, 67, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--green-deep);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.consult-note {
+  max-width: 560px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--sunrise);
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--earth-brown);
+  font-size: 14px;
+}
+
+.chat-card {
+  min-height: 740px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid rgba(49, 95, 67, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.chat-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chat-status span {
+  display: block;
+  color: var(--secondary);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.chat-status strong {
+  color: var(--green-deep);
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.ghost-button {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(49, 95, 67, 0.18);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--green-deep);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quick-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 0 12px;
+}
+
+.quick-prompts button {
+  padding: 8px 12px;
+  border: 1px solid rgba(49, 95, 67, 0.14);
+  border-radius: 999px;
+  background: rgba(232, 241, 232, 0.8);
+  color: var(--green-deep);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.messages {
+  flex: 1;
+  min-height: 380px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding: 10px 2px 18px;
+}
+
+.message {
+  display: flex;
+  margin: 12px 0;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message-content {
+  width: fit-content;
+  max-width: min(82%, 620px);
+  padding: 12px 14px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+.message.ai .message-content {
+  background: #f2f6ef;
+  color: var(--rock);
+}
+
+.message.user .message-content {
+  background: var(--green-deep);
+  color: var(--paper);
+}
+
+.message.error .message-content {
+  background: #fff0ec;
+  color: #8b3d2c;
+}
+
+.chat-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.chat-input textarea {
+  width: 100%;
+  resize: none;
+  padding: 12px 14px;
+  border: 1px solid rgba(49, 95, 67, 0.18);
+  border-radius: 8px;
+  color: var(--rock);
+  font: inherit;
+  line-height: 1.6;
+  outline: none;
+}
+
+.chat-input textarea:focus {
+  border-color: rgba(49, 95, 67, 0.52);
+  box-shadow: 0 0 0 3px rgba(95, 147, 99, 0.14);
+}
+
+.chat-footnote {
+  margin-top: 12px;
+  color: var(--secondary);
+  font-size: 13px;
+}
+
+@media (max-width: 920px) {
+  .consult-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .consult-intro {
+    padding: 24px 0 0;
+  }
+
+  .chat-card {
+    min-height: 680px;
+  }
+}
+
+@media (max-width: 640px) {
+  .consult-shell {
+    width: min(100% - 32px, 1180px);
+    padding: 28px 0 44px;
+  }
+
+  .consult-intro h1 {
+    font-size: 42px;
+  }
+
+  .chat-card {
+    min-height: 640px;
+    padding: 16px;
+  }
+
+  .chat-input {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-input .button {
+    width: 100%;
+  }
+
+  .message-content {
+    max-width: 92%;
+  }
+}

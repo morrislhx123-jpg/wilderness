@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI自媒体策略顾问｜旷野行动</title>
+    <meta
+      name="description"
+      content="不确定自己的业务适不适合做自媒体内容订阅？先和旷野行动AI自媒体策略顾问聊一聊。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./consult.css" />
+  </head>
+  <body class="consult-body">
+    <header class="site-header consult-header" aria-label="网站导航">
+      <a class="brand" href="./index.html" aria-label="返回首页">
+        <span class="brand-mark"></span>
+        <span>旷野行动</span>
+      </a>
+      <nav class="nav-links" aria-label="页面分区">
+        <a href="./index.html#pricing">价格套餐</a>
+        <a href="./index.html#samples">样例效果</a>
+        <a href="./index.html#contact">联系Morris</a>
+      </nav>
+    </header>
+
+    <main class="consult-shell">
+      <section class="consult-panel" aria-label="AI自媒体策略咨询">
+        <div class="consult-intro">
+          <p class="eyebrow">AI自媒体策略顾问</p>
+          <h1>先判断方向，<br />再决定要不要做。</h1>
+          <p>
+            你可以直接说自己的行业、产品、账号想法或困惑。AI会帮你判断是否适合内容订阅、该先试用还是直接订阅，以及下一步需要准备什么。
+          </p>
+          <div class="consult-points" aria-label="咨询范围">
+            <span>赛道判断</span>
+            <span>用户分析</span>
+            <span>套餐选择</span>
+            <span>资料准备</span>
+          </div>
+          <div class="consult-note">
+            AI建议仅供参考，不承诺涨粉、爆款或成交。复杂情况建议再找Morris确认。
+          </div>
+        </div>
+
+        <div class="chat-card" aria-label="聊天窗口">
+          <div class="chat-status">
+            <div>
+              <span>免费积分</span>
+              <strong id="pointsText">--</strong>
+            </div>
+            <button class="ghost-button" id="resetButton" type="button">重新开始</button>
+          </div>
+
+          <div class="quick-prompts" aria-label="快捷问题">
+            <button type="button">我适合这个服务吗？</button>
+            <button type="button">我还没想清楚方向，可以用吗？</button>
+            <button type="button">试用包和订阅包怎么选？</button>
+            <button type="button">我需要准备什么资料？</button>
+          </div>
+
+          <div class="messages" id="messages" aria-live="polite"></div>
+
+          <form class="chat-input" id="chatForm">
+            <textarea
+              id="messageInput"
+              rows="3"
+              placeholder="例如：我是武汉做心理咨询的，还没做过小红书，想知道适不适合先试用。"
+              maxlength="1200"
+              required
+            ></textarea>
+            <button class="button primary" id="sendButton" type="submit">发送</button>
+          </form>
+
+          <div class="chat-footnote">
+            积分用完后，可以添加微信购买39元试用包，获得更完整的分析和2条样例内容。为了改进服务，我们可能记录咨询内容，请不要输入身份证号、银行卡等敏感信息。
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./analytics.js"></script>
+    <script src="./consult.js"></script>
+  </body>
+</html>

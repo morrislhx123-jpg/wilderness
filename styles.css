@@ -265,6 +265,53 @@ section {
     var(--paper);
 }
 
+.ai-consult-section {
+  background:
+    linear-gradient(135deg, rgba(95, 147, 99, 0.14), transparent 34%),
+    var(--mist);
+}
+
+.ai-consult-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.ai-consult-layout p {
+  max-width: 760px;
+  color: var(--secondary);
+  font-size: 18px;
+}
+
+.ai-consult-card {
+  padding: 32px;
+  border: 1px solid rgba(49, 95, 67, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.ai-consult-card span {
+  color: var(--earth-brown);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.ai-consult-card strong {
+  display: block;
+  margin: 6px 0 12px;
+  color: var(--green-deep);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.ai-consult-card p {
+  margin-bottom: 22px;
+  color: var(--secondary);
+  font-size: 16px;
+}
+
 .offer-intro {
   max-width: 900px;
   margin-bottom: 28px;
@@ -1210,6 +1257,7 @@ section {
   .fit-note-grid,
   .sample-intro,
   .split,
+  .ai-consult-layout,
   .video-layout,
   .proof-layout,
 .upgrade-layout,
@@ -1243,6 +1291,7 @@ section {
 
   .trial-card,
   .premium-grid,
+  .ai-consult-layout,
   .contact-layout,
   .proof-layout,
   .video-layout,
